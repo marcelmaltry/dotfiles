@@ -3,20 +3,28 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
-export CC=gcc-7
-export CXX=g++-7
-
-# https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby
-export PATH="/usr/local/sbin:$PATH"
-
-# ZSH Installation
-ZSH=${HOME}/.antigen
+export CC=gcc-8
+export CXX=g++-8
 
 # https://github.com/bhilburn/powerlevel9k
 source $HOME/.p9config
 
-# https://github.com/zsh-users/antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
+# OS specific
+case `uname` in
+	Darwin)
+	# macOS
+	# https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
+	export PATH="${HOMBREW_PREFIX}/sbin:$PATH"	
+	# https://github.com/zsh-users/antigen
+	source $(brew --prefix)/share/antigen/antigen.zsh
+	;;
+	Linux)
+	# Linux
+	# https://github.com/zsh-users/antigen
+	source /usr/share/zsh/share/antigen.zsh
+	;;
+esac
+
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-init
 antigen init $HOME/.antigenrc
 
@@ -31,5 +39,6 @@ alias lt='exa --tree --group-directories-first'
 alias lta='exa --all --tree --group-directories-first'
 alias lat='exa --all --tree --group-directories-first'
 alias llat='exa --long --all --tree --group-directories-first'
+
 alias suroot='sudo -E -s'
 mkcd() { mkdir -p "$@" && cd "$@"; }

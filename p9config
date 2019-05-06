@@ -219,7 +219,7 @@ POWERLEVEL9K_PYTHON_ICON='\uE73C'
 # POWERLEVEL9K_LARAVEL_ICON ='\ue73f '
 
 # PROMPT ELEMENTS
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( 'status' 'os_icon' 'root_indicator' 'context' 'dir_writable' 'dir' 'vcs' )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( 'status' 'os_icon' 'context' 'dir_writable' 'dir' 'vcs' )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( 'virtualenv' )
 
 # Fix "insecure completion-dependent directories detected" issue 
