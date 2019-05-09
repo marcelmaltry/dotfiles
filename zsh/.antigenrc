@@ -1,9 +1,3 @@
-# ZSH Installation
-ZSH=${HOME}/.antigen/bundles/robbyrussell/oh-my-zsh/
-
-# https://github.com/romkatv/powerlevel10k#antigen
-antigen theme romkatv/powerlevel10k
-
 # https://github.com/zsh-users/antigen/wiki/Commands#oh-my-zsh
 antigen use oh-my-zsh
 
@@ -24,8 +18,12 @@ antigen bundles <<EOBUNDLES
 # other bundles
 	zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
 	MichaelAquilina/zsh-you-should-use # https://github.com/MichaelAquilina/zsh-you-should-use
+	# floor114/zsh-apple-touchbar # https://github.com/zsh-users/zsh-apple-touchbar
 
 EOBUNDLES
+
+# https://github.com/romkatv/powerlevel10k#antigen
+antigen theme romkatv/powerlevel10k
 
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-apply
 antigen apply
