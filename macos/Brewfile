@@ -1,3 +1,6 @@
+# https://github.com/Homebrew/homebrew-bundle
+
+# Taps
 tap "beeftornado/rmtree"
 tap "cliutils/apple"
 tap "homebrew/bundle"
@@ -7,6 +10,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "microsoft/mssql-release"
+
+# Binaries
 brew "ack"
 brew "apache-spark"
 brew "openssl"
@@ -32,6 +37,7 @@ brew "libyaml"
 brew "llvm"
 brew "luajit"
 brew "mackup"
+brew "mas"
 brew "monetdb"
 brew "mysql-client"
 brew "neovim"
@@ -52,14 +58,14 @@ brew "zsh"
 brew "cliutils/apple/libomp"
 brew "microsoft/mssql-release/msodbcsql"
 brew "microsoft/mssql-release/mssql-tools"
+
+# Apps
 cask "adobe-acrobat-reader"
 cask "adoptopenjdk8"
-cask "aerial"
 cask "android-file-transfer"
 cask "android-platform-tools"
 cask "appcleaner"
 cask "azure-data-studio"
-cask "brooklyn"
 cask "calibre"
 cask "chromium"
 cask "coconutbattery"
@@ -78,6 +84,7 @@ cask "java"
 cask "java8"
 cask "jdownloader"
 cask "keepassxc"
+cask "keepingyouawake"
 cask "mkvtoolnix"
 cask "owncloud"
 cask "pocket-casts"
@@ -94,3 +101,13 @@ cask "tiny-player"
 cask "track-o-bot"
 cask "virtualbox"
 cask "visual-studio-code"
+
+# Screensaver
+cask "aerial"
+cask "brooklyn"
+
+# Mac App Store
+mas 'Magnet', id: 441258766
+mas 'NZBVortex3', id: 914250185
+mas 'Display-Menu', id: 549083868
+mas 'Lungo', id: 1263070803
