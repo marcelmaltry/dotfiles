@@ -8,12 +8,9 @@ export CC=gcc-8
 export CXX=g++-8
 
 # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
-# TODO: only do this on MacOS possibly in .zshrc
 export PATH="/usr/local/sbin:$PATH"
 
-
 # Setting default JDK to version 1.8.
-# TODO: only di this on MacIS possibly in .zshrc
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # https://github.com/marcelmaltry/dotfiles
@@ -24,7 +21,7 @@ ZDOTDIR=${DOTFILES}/zsh
 
 # https://github.com/zsh-users/antigen/wiki/Configuration
 ANTIGEN_INSTALL_DIR=${ZDOTDIR}/antigen
-# Generalö
+# General
 ADOTDIR=${ZDOTDIR}/.antigen
 # ANTIGEN_LOG=${ADOTDIR}/antigen.log
 # Customization
@@ -35,7 +32,8 @@ ANTIGEN_BUNDLES=${ADOTDIR}/bundles
 # ANTIGEN_DEBUG_LOG
 # Optimizations
 # ANTIGEN_AUTO_CONFIG=true
-# Fix spotify not found of osx oh-my-zsh bundle
+
+# set ZSH for oh-my-zsh bundles
 ZSH=${ANTIGEN_BUNDLES}/robbyrussell/oh-my-zsh
 
 # https://github.com/bhilburn/powerlevel9k
