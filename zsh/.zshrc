@@ -4,8 +4,8 @@ export VISUAL=nvim
 export PAGER=less
 
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
-export CC=gcc-8
-export CXX=g++-8
+export CC=gcc-9
+export CXX=g++-9
 
 # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
 export PATH="/usr/local/sbin:$PATH"
@@ -44,5 +44,5 @@ source ${ANTIGEN_INSTALL_DIR}/antigen.zsh
 antigen init ${ZDOTDIR}/.antigenrc
 
 # TODO: set variable for zsh!
-source ${ZDOTDIR}/aliases/.aliases
-source ${ZDOTDIR}/functions/.functions
+source ${ZDOTDIR}/aliases.zsh
+source ${ZDOTDIR}/functions.zsh
