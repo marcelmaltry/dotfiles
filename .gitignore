@@ -1,3 +1,6 @@
+# antigen
 *.zwc
-
 zsh/.antigen/*
+
+# osx
+*.DS_Store
