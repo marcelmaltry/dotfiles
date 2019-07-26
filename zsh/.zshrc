@@ -3,9 +3,13 @@ export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
 
+# 
+export LC_ALL=en_US.UTF-8 
+export LANG=en_US.UTF-8
+
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
-export CC=gcc-9
-export CXX=g++-9
+export CC=/usr/local/opt/llvm/bin/clang
+export CXX=/usr/local/opt/llvm/bin/clang++
 
 # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
 export PATH="/usr/local/sbin:$PATH"
@@ -42,6 +46,9 @@ source ${ZDOTDIR}/.p9theme
 source ${ANTIGEN_INSTALL_DIR}/antigen.zsh
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-init
 antigen init ${ZDOTDIR}/.antigenrc
+
+# https://ninja-build.org/manual.html#_environment_variables
+export NINJA_STATUS="[%p|%s/%t|%es]" 
 
 # TODO: set variable for zsh!
 source ${ZDOTDIR}/aliases.zsh
