@@ -1,0 +1,11 @@
+# Run `git config --global core.excludesfile ~/.gitignore` to exclude .gitignore globally.
+
+# Mac
+.DS_Store
+
+# Vim
+project.vim
+session.vim
+
+# Clang
+.clang

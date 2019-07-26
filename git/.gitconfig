@@ -1,0 +1,7 @@
+[user]
+	email = s9mlmalt@stud.uni-saarland.de
+	name = s9mlmalt
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/mmaltry/.gitignore
