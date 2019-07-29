@@ -1,21 +1,37 @@
-# .dotfiles
+# Marcel's macOS .dotfiles
 
 ## Installation
 
-### macOS
-Install the latest version of [zsh](https://www.zsh.org) from [Homebrew](https://brew.sh) and change it to be the default shell.
+### Preliminaries
+
+*TODO: integrate preliminaries into dotbot config.*
+
+Install the latest version of [Homebrew](https://brew.sh).
+```shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+Install the latest version of [zsh](https://www.zsh.org) from [Homebrew](https://brew.sh).
 ```shell
 brew install zsh
+```
+Make zsh your default shell.
+```shell
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 ```
 
-*TODO: Add further instructions after moving to dotbot.*
+### Install Dotfiles
 
-*Note: Dropped ArchLinux support for now.*
-### ArchLinux
-Clone repository and create symlinks to local copy.
+*Note: install config not yet set up.*
+
+Clone this repository and all its submodules, preferabbly to `~/.dotfiles`.
 ```shell
-git clone https://github.com/marcelmaltry/dotfiles.git ~/.dotfiles
-rm ~/.zshenv
-ln -sv ~/.dotfiles/zsh/.zshenv ~
+git clone --recursive https://github.com/marcelmaltry/dotfiles. ~/.dotfiles
+```
+Navigate to your dotfiles folder.
+```shell
+cd ~/.dotfiles
+```
+Run the [dotbot](https://github.com/anishathalye/dotbot/) install script.
+```shell
+./install
 ```
