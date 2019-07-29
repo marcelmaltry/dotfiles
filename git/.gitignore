@@ -6,6 +6,8 @@
 # Vim
 project.vim
 session.vim
+.project.vim
+.session.vim
 
 # Clang
 .clang
