@@ -1,10 +1,14 @@
 [user]
-    email = s9mlmalt@stud.uni-saarland.de
-    name = s9mlmalt
+    email = mmaltry+github@mailbox.org
+    name = Marcel Maltry
 [pull]
     rebase = true
 [core]
     excludesfile = /Users/mmaltry/.gitignore
+[color]
+    status = auto
+    branch = auto
+    ui = auto
 [alias]
     long = log --stat --decorate --graph
     lg = log --graph --format=format:'%C(bold yellow reverse)%h%C(reset) %C(bold white)— %C(bold red)%an%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(reset)%w(120,0,10)%s' --abbrev-commit
