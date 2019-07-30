@@ -11,3 +11,6 @@ session.vim
 
 # Clang
 .clang
+
+# Python
+__pycache__
