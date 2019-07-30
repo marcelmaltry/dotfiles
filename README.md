@@ -4,8 +4,6 @@
 
 ### Preliminaries
 
-*TODO: integrate preliminaries into dotbot config.*
-
 Install the latest version of [Homebrew](https://brew.sh).
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
