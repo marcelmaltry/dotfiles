@@ -21,8 +21,6 @@ sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
 ### Install Dotfiles
 
-*Note: install config not yet set up.*
-
 Clone this repository and all its submodules, preferabbly to `~/.dotfiles`.
 ```shell
 git clone --recursive https://github.com/marcelmaltry/dotfiles. ~/.dotfiles
