@@ -1,13 +1,18 @@
-# TODOs
+# TODO
+The following has to be done in the future.
 
-## git
-- add install script
--- link .gitconfig and gitignore
--- set global gitignore
+## neovim
+* adjust vim config files to personal taste
+* get rid of Makefile
 
 ## zsh
-- add install script
--- link .zshrc
+* add additional aliases and functions
 
-## vim
-- add install script
+## macos
+* set up defaults
+
+## iterm2
+* apply color scheme from script
+
+## dotpot
+* think about automating entire set up process by invoking shell from dotbot
