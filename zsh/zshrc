@@ -1,0 +1,61 @@
+#############
+# VARIABLES #
+#############
+
+# Set up default utilities.
+export EDITOR=nvim
+export VISUAL=nvim
+export PAGER=less
+
+# Set up default C and C++ compilers.
+# https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
+export CC=/usr/local/opt/llvm/bin/clang
+export CXX=/usr/local/opt/llvm/bin/clang++
+
+# Set up ninja output format.
+# https://ninja-build.org/manual.html#_environment_variables
+export NINJA_STATUS="[%p|%s/%t|%es]"
+
+#########################
+# ANTIGEN CONFIGURATION #
+#########################
+
+# https://github.com/zsh-users/antigen/wiki/Configuration
+export ANTIGEN_PATH=${DOTFILES}/third_party/antigen
+
+# General
+# ADOTDIR=${HOME}/.antigen
+# ANTIGEN_LOG=${ADOTDIR}/antigen.log
+
+# Customization
+# ANTIGEN_CACHE=${ADOTDIR}/init.zsh
+# ANTIGEN_COMPDUMP=${ADOTDIR}/.zcompdump
+# ANTIGEN_BUNDLES=${ADOTDIR}/bundles
+# ANTIGEN_LOCK=${ADOTDIR}/.lock
+# ANTIGEN_DEBUG_LOG=${ADOTDIR}/debug.log
+
+# Optimizations
+# ANTIGEN_AUTO_CONFIG=true
+# ANTIGEN_CHECK_FILES
+
+# https://github.com/unixorn/autoupdate-antigen.zshplugin
+# ANTIGEN_PLUGIN_UPDATE_DAYS=3
+# ANTIGEN_SYSTEM_UPDATE_DAYS=3
+
+# set ZSH for oh-my-zsh bundles
+# ZSH=${ANTIGEN_BUNDLES}/robbyrussell/oh-my-zsh
+
+# https://github.com/romkatv/powerlevel10k
+source ${DOTFILES}/zsh/p10ktheme
+# https://github.com/zsh-users/antigen/wiki/Quick-start#load-antigen-in-your-current-shell
+source ${ANTIGEN_PATH}/antigen.zsh
+# https://github.com/zsh-users/antigen/wiki/Commands#antigen-init
+antigen init ${DOTFILES}/zsh/antigenrc
+
+#######################
+# FUNCTIONS & ALIASES #
+#######################
+
+# TODO: set variable for zsh!
+source ${DOTFILES}/zsh/aliases.zsh
+source ${DOTFILES}/zsh/functions.zsh
