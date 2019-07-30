@@ -1,14 +1,21 @@
-To install stubby under macOS and copy the config file proceed as follows.
+To install stubby under macOS, proceed as follows.
+# Install stubby and configure
+First install stubby from Homebrew, then replace the configuration file with the file from the repository. Alternatively, the dotbot install script will set up a link to the configuration file.
 ```sh
-# Install stubby
 brew install stubby
-# Link stubby config
 cp stubby.yml /usr/local/etc/stubby/stubby.yml
-# Start stubby service on boot
+```
+
+# Start stubby
+Start stubby as a homebrew service. This will make sure that stubby is started on boot. Afterwards, we need to direct all DNS queries to localhost. Stubby provides a script to apply these changes.
+```zsh
 sudo brew services restart stubby
-# Redirect DNS queries to localhost
 sudo /usr/local/opt/stubby/sbin/stubby-setdns-macos.sh
+```
+
 # Test stubby
+If set up correctly, stubby will now handle DNS queries and DNSSEC validation should be required. You can test whether stubby works correctly by running the following two dns queries.
+```sh
 # should return A record
 dig sigok.verteiltesysteme.net @127.0.0.1
 # should return SERVFAIL
