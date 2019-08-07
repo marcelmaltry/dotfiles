@@ -1,6 +1,6 @@
 # Marcel's macOS and ArchLinux .dotfiles
 
-## Installation macOS
+## Installation
 
 ### Preliminaries
 
