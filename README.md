@@ -1,8 +1,10 @@
-# Marcel's macOS .dotfiles
+# Marcel's macOS and ArchLinux .dotfiles
 
-## Installation
+## Installation macOS
 
 ### Preliminaries
+
+#### macOS
 
 Install the latest version of [Homebrew](https://brew.sh).
 ```shell
@@ -15,6 +17,16 @@ brew install zsh
 Make zsh your default shell.
 ```shell
 sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+```
+#### ArchLinux
+
+Check that `zsh` ist set up correctly.
+```shell
+zsh
+```
+Make `zsh`your default shell.
+```shell
+chsh -s `which zsh`
 ```
 
 ### Install Dotfiles

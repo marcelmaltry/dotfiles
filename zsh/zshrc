@@ -9,8 +9,15 @@ export PAGER=less
 
 # Set up default C and C++ compilers.
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
-export CC=/usr/local/opt/llvm/bin/clang
-export CXX=/usr/local/opt/llvm/bin/clang++
+if [[ `uname` == "Darwin" ]];
+then
+    export CC=/usr/local/opt/llvm/bin/clang
+    export CXX=/usr/local/opt/llvm/bin/clang++
+elif [[ `uname` == "Linux" ]];
+then
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
+fi
 
 # Set up ninja output format.
 # https://ninja-build.org/manual.html#_environment_variables

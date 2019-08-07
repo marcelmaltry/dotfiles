@@ -5,12 +5,10 @@ antigen use oh-my-zsh
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-bundles
 antigen bundles <<EOBUNDLES
 
-# default repo bundles https://github.com/robbyrussell/oh-my-zsh#plugins
+# Default repo bundles https://github.com/robbyrussell/oh-my-zsh#plugins
     adb # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/adb
-    brew # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/brew
     colored-man-pages # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colored-man-pages
     git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
-    osx # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx
     sudo # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sudo
     vagrant # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vagrant
 
@@ -20,12 +18,19 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-completions # https://github.com/zsh-users/zsh-completions
 #    zsh-users/zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 
-# other bundles
+# Other bundles
     MichaelAquilina/zsh-you-should-use # https://github.com/MichaelAquilina/zsh-you-should-use
     unixorn/autoupdate-antigen.zshplugin # https://github.com/unixorn/autoupdate-antigen.zshplugin
     zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
 
 EOBUNDLES
+
+# Platform dependent bundles
+if [[ `uname` == "Darwin" ]];
+then
+    antigen bundle brew # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/brew
+    antigen bundle osx # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx
+fi
 
 # https://github.com/romkatv/powerlevel10k#antigen
 antigen theme romkatv/powerlevel10k

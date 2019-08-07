@@ -1,0 +1,36 @@
+# defaults
+- defaults:
+    link:
+      relink: true
+
+# clean
+- clean: ['~', '~/.config', '~/.config/nvim']
+
+# zsh
+- link:
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+
+# git
+- link:
+    ~/.gitignore: git/gitignore
+    ~/.gitconfig: git/gitconfig
+
+# neovim
+- shell:
+    - ./neovim/install-vim_plug.sh
+- link:
+    ~/.config/nvim/init.vim:
+      create: true
+      force: true
+      path: neovim/init.vim
+    ~/.config/nvim/after: neovim/after
+    ~/.config/nvim/ftdetect: neovim/ftdetect
+    ~/.config/nvim/syntax: neovim/syntax
+
+# stubby
+- link:
+    /etc/stubby/stubby.yml:
+      create: true
+      force: true
+      path: stubby/stubby.yml

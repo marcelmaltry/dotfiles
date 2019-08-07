@@ -1,10 +1,16 @@
 # Set up PATH to find Homebrew installed binaries.
 # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
-export PATH="/usr/local/sbin:$PATH"
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export PATH="/usr/local/sbin:$PATH"
+fi
 
 # Set up JAVA_HOME to use JDK
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # openjdk-8
-# export JAVA_HOME=`/usr/libexec/java_home -v 12` # openjdk-12
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # openjdk-8
+#    export JAVA_HOME=`/usr/libexec/java_home -v 12` # openjdk-12
+fi
 
 # Set up locale
 export LC_ALL=en_US.UTF-8
