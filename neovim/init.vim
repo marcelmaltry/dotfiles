@@ -17,7 +17,7 @@ Plug 'derekwyatt/vim-fswitch'
 "Plug 'euclio/vim-markdown-composer', { 'do': function('BuildMarkdownComposer'), 'for': 'markdown' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'jalvesaq/Nvim-R', { 'for': 'r' }
-Plug 'lervag/vimtex', { 'for': 'tex' }
+"Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'mhinz/vim-grepper'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'powerman/vim-plugin-viewdoc'
