@@ -52,8 +52,13 @@ let g:grepper = { 'quickfix': 0 }
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/'
+if has('macunix')
+    let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/8.0.0_1/lib/libclang.dylib'
+    let g:deoplete#sources#clang#clang_header = '/usr/local/Cellar/llvm/8.0.0_1/lib/clang'
+elseif has('unix')
+    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+    let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+endif
 let g:deoplete#sources#clang#sort_algo = 'priority'
 let g:deoplete#complete_method = 'completefunc'
 let g:deoplete#sources#clang#flags = [
