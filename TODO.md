@@ -14,5 +14,5 @@ The following has to be done in the future.
 ## iterm2
 * apply color scheme from script
 
-## dotpot
+## dotbot
 * think about automating entire set up process by invoking shell from dotbot
