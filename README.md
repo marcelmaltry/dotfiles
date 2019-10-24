@@ -39,7 +39,8 @@ Navigate to your dotfiles folder.
 ```shell
 cd ~/.dotfiles
 ```
-Run the [dotbot](https://github.com/anishathalye/dotbot/) install script.
+Run the [dotbot](https://github.com/anishathalye/dotbot/) install script. Note that, this will replace your current
+`zsh`, `git`, and `nvim` configurations.
 ```shell
 ./install
 ```
