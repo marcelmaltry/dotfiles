@@ -12,7 +12,7 @@ DEFAULT_USERT="$USER"
 TERM=xterm-256color
 
 # https://github.com/romkatv/powerlevel10k
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # STYLING
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
