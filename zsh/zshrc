@@ -13,7 +13,8 @@ if [[ `uname` == "Darwin" ]];
 then
     export CC=clang
     export CXX=clang++
-    export MACOSX_DEPLOYMENT_TARGET=10.15 # required for C++17 any, variant, optional, filesystem
+#    export MACOSX_DEPLOYMENT_TARGET=10.15 # required for C++17 any, variant, optional, filesystem
+    export HOMEBREW_GITHUB_API_TOKEN=''
 elif [[ `uname` == "Linux" ]];
 then
     export CC=/usr/bin/clang
