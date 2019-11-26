@@ -9,27 +9,29 @@ function! BuildMarkdownComposer(info)
 endfunction
 
 call plug#begin()
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang', 'for': ['c', 'cpp', 'python', 'tex'] }
+"Plug 'artur-shaik/vim-javacomplete2', { 'for': ['java'] }
 "Plug 'euclio/vim-markdown-composer', { 'do': function('BuildMarkdownComposer'), 'for': 'markdown' }
+"Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'jalvesaq/Nvim-R', { 'for': 'r' }
 "Plug 'lervag/vimtex', { 'for': 'tex' }
+"Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+"Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+"Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 "Plug 'szymonmaszke/vimpyter'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'artur-shaik/vim-javacomplete2', { 'for': ['java'] }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'jalvesaq/Nvim-R', { 'for': 'r' }
 Plug 'mhinz/vim-grepper'
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'powerman/vim-plugin-viewdoc'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'rhysd/vim-grammarous'
-Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'skywind3000/asyncrun.vim'
-Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 Plug 'sukima/xmledit', { 'for': ['xml', 'html', 'xhtml'] }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -37,11 +39,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'markdown' }
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/taglist.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'zchee/deoplete-clang', { 'for': ['c', 'cpp'] }
 Plug 'zchee/deoplete-jedi', { 'for': ['python', 'ipynb'] }
 call plug#end()
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang', 'for': ['c', 'cpp', 'python', 'tex'] }
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -63,8 +63,6 @@ endif
 let g:deoplete#sources#clang#sort_algo = 'priority'
 let g:deoplete#complete_method = 'completefunc'
 let g:deoplete#sources#clang#flags = [
-            \ '-triple', 'x86_64-pc-linux-gnu',
-            \
             \ '-W',
             \ '-Wall',
             \ '-pedantic'
@@ -137,28 +135,11 @@ let g:grammarous#disabled_rules = {
             \ '*' : ['DASH_RULE'],
             \ }
 
-" nvim-gdb
-function! NvimGdbNoTKeymaps()
-  tnoremap <silent> <buffer> <esc> <c-\><c-n>
-endfunction
-
-let g:nvimgdb_config_override = {
-  \ 'key_next': 'n',
-  \ 'key_step': 's',
-  \ 'key_finish': 'f',
-  \ 'key_continue': 'c',
-  \ 'key_until': 'u',
-  \ 'key_breakpoint': 'b',
-  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
-  \ }
-
-
 " vimtex
 "let g:vimtex_compiler_progname = 'nvr'
 
-"==}}}==================================================================================================================
 
-"== Global configuration {{{============================================================================================
+"== Global configuration ===============================================================================================
 "colorscheme solarized
 set background=dark
 
@@ -238,9 +219,8 @@ elseif has('unix')
 endif
 let g:python_host_skip_check = 1
 let g:python3_host_skip_check = 1
-"==}}}==================================================================================================================
 
-"== Functions & Commands {{{============================================================================================
+"== Functions & Commands ===============================================================================================
 function! CrosshairToggle()
     if (&cursorcolumn == 1)
         setlocal nocursorcolumn
@@ -302,9 +282,8 @@ command! Q call SaveAndQuit()
 command! DeleteTrailingWs :%s/\s\+$//
 command! Untab2 :%s\t/  /g
 command! Untab4 :%s\t/    /g
-"==}}}==================================================================================================================
 
-"== Key mapping {{{=====================================================================================================
+"== Key mapping ========================================================================================================
 tmap <A-h> <C-\><C-n><C-w>h
 tmap <A-j> <C-\><C-n><C-w>j
 tmap <A-k> <C-\><C-n><C-w>k
@@ -357,7 +336,6 @@ nmap <silent> <leader>gN :call grammarous#move_to_previous_error(getpos('.')[1 :
 autocmd Filetype ipynb nmap <silent> <leader>b :VimpyterInsertPythonBlock<CR>
 autocmd Filetype ipynb nmap <silent> <leader>j :VimpyterStartJupyter<CR>
 autocmd Filetype ipynb nmap <silent> <leader>n :VimpyterStartNteract<CR>
-"==}}}==================================================================================================================
 
 " Project-specific configuration
 if filereadable(".project.vim")
