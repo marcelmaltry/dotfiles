@@ -43,4 +43,4 @@ antigen apply
 
 # https://github.com/zsh-users/zsh-autosuggestions
 zmodload zsh/zpty
-ZSH_AUTOSUGGEST_STRATEGY=(completion)
+export ZSH_AUTOSUGGEST_STRATEGY=(completion)
