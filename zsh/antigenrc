@@ -42,5 +42,4 @@ antigen apply
 # fast-theme default
 
 # https://github.com/zsh-users/zsh-autosuggestions
-zmodload zsh/zpty
-export ZSH_AUTOSUGGEST_STRATEGY=(completion)
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd)
