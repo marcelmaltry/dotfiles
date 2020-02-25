@@ -1,6 +1,7 @@
 [user]
     name = Marcel Maltry
     email = mmaltry+github@mailbox.org
+    signingkey = 4CFAC276B095095C
 [pull]
     rebase = true
 [push]
@@ -32,3 +33,5 @@
     lg = log --graph --format=format:'%C(bold yellow reverse)%h%C(reset) %C(bold white)— %C(bold red)%an%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(reset)%w(120,0,10)%s' --abbrev-commit
     lga = log --all --graph --format=format:'%C(bold yellow reverse)%h%C(reset) %C(bold white)— %C(bold red)%an%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(reset)%w(120,0,10)%s' --abbrev-commit
     conflict = !nvim -c '/^[<=|>]\\{7\\}' $(git ls-files --unmerged | cut -c 51- | uniq)
+[gpg]
+    program = gpg2
