@@ -100,10 +100,6 @@ let g:ycm_key_list_previous_completion = []
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
-" errormarker
-" Distinguish between warnings and errors
-let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
-
 " ViewDoc
 let g:viewdoc_openempty=0
 let g:viewdoc_copy_to_search_reg=1
@@ -140,6 +136,17 @@ let g:grammarous#disabled_rules = {
 " vimtex
 "let g:vimtex_compiler_progname = 'nvr'
 
+" errormarker
+" Distinguish between warnings and errors
+let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+
+" NERDCommenter
+let g:NERDCreateDefaultMappings = 0
+let g:NERDAllowAnyVisualDelims = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDDefaultAlign = 'left'
 
 "== Global configuration ===============================================================================================
 "colorscheme solarized
