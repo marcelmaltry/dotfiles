@@ -8,6 +8,7 @@
     default = tracking
 [commit]
     verbose = true
+    gpgsign = true
 [merge]
     tool = nvimdiff
     defaultToUpstream = true
