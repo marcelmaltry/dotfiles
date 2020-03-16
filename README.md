@@ -30,7 +30,7 @@ chsh -s `which zsh`
 
 Clone this repository and all its submodules, preferabbly to `~/.dotfiles`.
 ```shell
-git clone --recursive https://github.com/marcelmaltry/dotfiles. ~/.dotfiles
+git clone --recursive https://github.com/marcelmaltry/dotfiles.git ~/.dotfiles
 ```
 Navigate to your dotfiles folder.
 ```shell
