@@ -12,6 +12,12 @@ then
 #    export JAVA_HOME=`/usr/libexec/java_home -v 12` # openjdk-12
 fi
 
+# Set up PATH to use user binaries and depot_tools.
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export PATH="/Users/mmaltry/.bin:/Users/mmaltry/Repos/depot_tools:$PATH"
+fi
+
 # Set up locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
