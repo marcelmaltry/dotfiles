@@ -2,7 +2,7 @@
 # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
 if [[ "$OSTYPE" == "darwin"* ]];
 then
-    export PATH="/usr/local/sbin:$PATH"
+    export PATH="$PATH:/usr/local/sbin"
 fi
 
 # Set up JAVA_HOME to use JDK
