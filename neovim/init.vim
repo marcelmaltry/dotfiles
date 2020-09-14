@@ -127,7 +127,11 @@ let g:grammarous#default_comments_only_filetypes = {
             \ '*' : 1, 'help' : 0, 'markdown' : 0,
             \ }
 let g:grammarous#use_vim_spelllang = 1
-let g:grammarous#languagetool_cmd = '/usr/bin/languagetool'
+if has('macunix')
+    let g:grammarous#languagetool_cmd = '/usr/local/bin/languagetool'
+elseif has('unix')
+    let g:grammarous#languagetool_cmd = '/usr/bin/languagetool'
+endif
 let g:grammarous#use_location_list = 1
 let g:grammarous#disabled_rules = {
             \ '*' : ['DASH_RULE'],
