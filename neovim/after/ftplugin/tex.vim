@@ -1,2 +1,7 @@
 setlocal spell
-setlocal spelllang=en_gb
+setlocal spelllang=en_us
+
+setlocal wrap
+setlocal linebreak
+setlocal textwidth=0
+setlocal wrapmargin=0
