@@ -19,18 +19,18 @@ call plug#begin()
 "Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 "Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 "Plug 'szymonmaszke/vimpyter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'mh21/errormarker.vim', { 'for': ['c', 'cpp'] }
 Plug 'mhinz/vim-grepper'
 Plug 'powerman/vim-plugin-viewdoc'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'rhysd/vim-grammarous'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'skywind3000/asyncrun.vim'
 Plug 'sukima/xmledit', { 'for': ['xml', 'html', 'xhtml'] }
 Plug 'tpope/vim-fugitive'
@@ -39,6 +39,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'markdown' }
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/taglist.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'zchee/deoplete-clang', { 'for': ['c', 'cpp'] }
 Plug 'zchee/deoplete-jedi', { 'for': ['python', 'ipynb'] }
 call plug#end()
@@ -110,9 +111,6 @@ let g:gitgutter_eager = 0
 
 " AsyncRun
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-augroup vimrc
-    autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1) " Open QuickFix window when AsyncRun is invoked
-augroup END
 
 " taglist
 nmap <silent> <F7> :TlistToggle<CR>
@@ -129,7 +127,11 @@ let g:grammarous#default_comments_only_filetypes = {
             \ '*' : 1, 'help' : 0, 'markdown' : 0,
             \ }
 let g:grammarous#use_vim_spelllang = 1
-let g:grammarous#languagetool_cmd = '/usr/bin/languagetool'
+if has('macunix')
+    let g:grammarous#languagetool_cmd = '/usr/local/bin/languagetool'
+elseif has('unix')
+    let g:grammarous#languagetool_cmd = '/usr/bin/languagetool'
+endif
 let g:grammarous#use_location_list = 1
 let g:grammarous#disabled_rules = {
             \ '*' : ['DASH_RULE'],
@@ -138,6 +140,17 @@ let g:grammarous#disabled_rules = {
 " vimtex
 "let g:vimtex_compiler_progname = 'nvr'
 
+" errormarker
+" Distinguish between warnings and errors
+let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+
+" NERDCommenter
+let g:NERDCreateDefaultMappings = 0
+let g:NERDAllowAnyVisualDelims = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDDefaultAlign = 'left'
 
 "== Global configuration ===============================================================================================
 "colorscheme solarized
@@ -296,7 +309,7 @@ nmap <A-l> <C-w>l
 nmap <silent> <F2> :NERDTree<CR>
 nmap <silent> <F3> :call SpellToggle()<CR>
 nmap <silent> <F4> :call CrosshairToggle()<CR>
-nmap <silent> <F5> :make!<CR>:cl<CR>
+nmap <silent> <F5> :AsyncRun -program=make<CR>
 nmap <silent> <F6> :cl<CR>
 
 nmap <silent> <A-w> gwgw

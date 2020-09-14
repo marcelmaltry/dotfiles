@@ -2,8 +2,8 @@
 alias tree="tree -C"
 
 # start and stop postgres server
-alias pg_start="pg_ctl start -D /usr/local/var/postgres"
-alias pg_stop="pg_ctl stop -D /usr/local/var/postgres"
+alias pg_start="pg_ctl -D /usr/local/var/postgres start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
 
 # Emby helpers 
 alias embyown="sudo chown -R emby:emby"

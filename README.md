@@ -14,10 +14,7 @@ Install the latest version of [zsh](https://www.zsh.org) from [Homebrew](https:/
 ```shell
 brew install zsh
 ```
-Make zsh your default shell.
-```shell
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-```
+
 #### ArchLinux
 
 Check that `zsh` ist set up correctly.
@@ -33,7 +30,7 @@ chsh -s `which zsh`
 
 Clone this repository and all its submodules, preferabbly to `~/.dotfiles`.
 ```shell
-git clone --recursive https://github.com/marcelmaltry/dotfiles. ~/.dotfiles
+git clone --recursive https://github.com/marcelmaltry/dotfiles.git ~/.dotfiles
 ```
 Navigate to your dotfiles folder.
 ```shell
