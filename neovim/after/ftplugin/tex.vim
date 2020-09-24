@@ -8,3 +8,5 @@ setlocal wrapmargin=0
 
 nmap j gj
 nmap k gk
+nmap $ g$
+nmap 0 g0
