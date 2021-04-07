@@ -134,6 +134,14 @@ POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109 %m"
 # POWERLEVEL9K_HOST_ICON_FOREGROUND="$DEFAULT_FOREGROUND"
 # POWERLEVEL9K_HOST_ICON_BACKGROUND="$DEFAULT_BACKGROUND"
 
+# VIRTUALENV
+POWERLEVEL9K_VIRTUALENV_FOREGROUND="$DEFAULT_BACKGROUND"
+POWERLEVEL9K_VIRTUALENV_BACKGROUND="yellow"
+
+# BACKGROUND JOBS
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND="$DEFAULT_FOREGROUND"
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="$DEFAULT_BACKGROUND"
+
 # ICONS
 POWERLEVEL9K_CARRIAGE_RETURN_ICON='\u2718'
 POWERLEVEL9K_USER_ICON='\uF415'
@@ -219,8 +227,17 @@ POWERLEVEL9K_PYTHON_ICON='\uE73C'
 # POWERLEVEL9K_LARAVEL_ICON ='\ue73f '
 
 # PROMPT ELEMENTS
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( 'status' 'os_icon' 'context' 'dir_writable' 'dir' 'vcs' 'virtualenv' )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( 'background_jobs' )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    status          # exit code of previous command
+    os_icon         # icon indicating operating system
+    context         # user@home
+    dir             # current direcoty
+    vcs             # git status
+)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    virtualenv      # python virtual environment
+    background_jobs # jobs running in background
+)
 
 # Fix "insecure completion-dependent directories detected" issue 
 ZSH_DISABLE_COMPFIX=true
