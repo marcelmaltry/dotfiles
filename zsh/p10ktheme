@@ -219,8 +219,8 @@ POWERLEVEL9K_PYTHON_ICON='\uE73C'
 # POWERLEVEL9K_LARAVEL_ICON ='\ue73f '
 
 # PROMPT ELEMENTS
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( 'status' 'os_icon' 'context' 'dir_writable' 'dir' 'vcs' )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( 'virtualenv' )
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( 'status' 'os_icon' 'context' 'dir_writable' 'dir' 'vcs' 'virtualenv' )
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( 'background_jobs' )
 
 # Fix "insecure completion-dependent directories detected" issue 
 ZSH_DISABLE_COMPFIX=true
