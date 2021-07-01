@@ -17,7 +17,7 @@ brew install zsh
 
 #### ArchLinux
 
-Check that `zsh` ist set up correctly.
+Check that `zsh` is set up correctly.
 ```shell
 zsh
 ```
