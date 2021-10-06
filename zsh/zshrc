@@ -14,7 +14,6 @@ then
     export CC=clang
     export CXX=clang++
 #    export MACOSX_DEPLOYMENT_TARGET=10.15 # required for C++17 any, variant, optional, filesystem
-    export HOMEBREW_GITHUB_API_TOKEN='8b68d78df71c272c60025e29a10e867798a52507' # placeholder, token is inactive
 elif [[ `uname` == "Linux" ]];
 then
     export CC=/usr/bin/clang
