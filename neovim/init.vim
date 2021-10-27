@@ -147,10 +147,10 @@ let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 " NERDCommenter
 let g:NERDCreateDefaultMappings = 0
 let g:NERDAllowAnyVisualDelims = 1
-let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
-let g:NERDTrimTrailingWhitespace = 1
 let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 "== Global configuration ===============================================================================================
 "colorscheme solarized
@@ -319,8 +319,8 @@ xmap <silent> <A-w> gw
 vmap <silent> <C-s> :sort i<CR>
 vmap <silent> <C-r> :!tac<CR>
 
-nmap <silent> <C-c> :call NERDComment(0, "toggle")<CR>
-vmap <silent> <C-c> :call NERDComment(1, "toggle")<CR>
+nmap <silent> <C-c> :call nerdcommenter#Comment(0, "toggle")<CR>
+vmap <silent> <C-c> :call nerdcommenter#Comment(1, "toggle")<CR>
 
 nmap <silent> <Tab>   :tabnext<CR>
 nmap <silent> <S-Tab> :tabprevious<CR>
