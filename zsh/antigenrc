@@ -24,7 +24,7 @@ antigen bundle zdharma/fast-syntax-highlighting # https://github.com/zdharma/fas
 if [[ `uname` == "Darwin" ]];
 then
     antigen bundle brew # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/brew
-    antigen bundle osx # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx
+    antigen bundle macos # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx
 fi
 
 # https://github.com/romkatv/powerlevel10k#antigen
