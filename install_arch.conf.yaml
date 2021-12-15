@@ -13,8 +13,9 @@
 
 # git
 - link:
-    ~/.gitignore: git/gitignore
     ~/.gitconfig: git/gitconfig
+    ~/.gitconfig_gitlab: git/gitconfig_gitlab
+    ~/.gitignore: git/gitignore
 
 # neovim
 - shell:
