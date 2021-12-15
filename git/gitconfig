@@ -24,7 +24,7 @@
 [difftool "nvimdiff"]
     cmd = nvim -d $LOCAL $REMOTE
 [core]
-    excludesfile = /Users/mmaltry/.gitignore
+    excludesfile = ~/.gitignore
 [color]
     status = auto
     branch = auto
