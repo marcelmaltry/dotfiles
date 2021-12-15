@@ -27,10 +27,3 @@
     ~/.config/nvim/after: neovim/after
     ~/.config/nvim/ftdetect: neovim/ftdetect
     ~/.config/nvim/syntax: neovim/syntax
-
-# stubby
-- link:
-    /usr/local/etc/stubby/stubby.yml:
-      create: true
-      force: true
-      path: stubby/stubby.yml
