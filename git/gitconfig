@@ -38,5 +38,3 @@
     conflict = !nvim -c '/^[<=|>]\\{7\\}' $(git ls-files --unmerged | cut -c 51- | uniq)
 [gpg]
     program = gpg
-[includeIf "gitdir:~/work/repos/"]
-    path = ~/.gitconfig_gitlab
