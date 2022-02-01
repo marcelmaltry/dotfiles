@@ -20,7 +20,6 @@ call plug#begin()
 "Plug 'sudar/vim-arduino-syntax', { 'for': 'ino' }
 "Plug 'szymonmaszke/vimpyter'
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'mh21/errormarker.vim', { 'for': ['c', 'cpp'] }
@@ -153,8 +152,8 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 "== Global configuration ===============================================================================================
-"colorscheme solarized
 set background=dark
+colorscheme ron
 
 let mapleader=","
 set confirm
