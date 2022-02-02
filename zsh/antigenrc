@@ -18,7 +18,7 @@ antigen bundle zsh-users/zsh-completions # https://github.com/zsh-users/zsh-comp
 # Other bundles
 # antigen bundle MichaelAquilina/zsh-you-should-use # https://github.com/MichaelAquilina/zsh-you-should-use
 antigen bundle unixorn/autoupdate-antigen.zshplugin # https://github.com/unixorn/autoupdate-antigen.zshplugin
-antigen bundle zdharma/fast-syntax-highlighting # https://github.com/zdharma/fast-syntax-highlighting
+antigen bundle zdharma-continuum/fast-syntax-highlighting # https://github.com/zdharma-continuum/fast-syntax-highlighting
 
 # Platform dependent bundles
 if [[ `uname` == "Darwin" ]];
