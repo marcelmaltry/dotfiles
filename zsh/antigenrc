@@ -1,24 +1,21 @@
-# https://github.com/zsh-users/antigen/wiki/Commands#oh-my-zsh
-antigen use oh-my-zsh
-
-# Default repo bundles https://github.com/robbyrussell/oh-my-zsh#plugins
-antigen bundle colored-man-pages # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colored-man-pages
-antigen bundle git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
-antigen bundle sudo # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sudo
+# oh-my-zsh bundles https://github.com/robbyrussell/oh-my-zsh/
+antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
+antigen bundle robbyrussell/oh-my-zsh plugins/git
+antigen bundle robbyrussell/oh-my-zsh plugins/sudo
 
 # zsh-users bundles https://github.com/zsh-users/
-antigen bundle zsh-users/zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions # https://github.com/zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 
 # Other bundles
-antigen bundle unixorn/autoupdate-antigen.zshplugin # https://github.com/unixorn/autoupdate-antigen.zshplugin
-antigen bundle zdharma-continuum/fast-syntax-highlighting # https://github.com/zdharma-continuum/fast-syntax-highlighting
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle zdharma-continuum/fast-syntax-highlighting
 
 # Platform dependent bundles
 if [[ `uname` == "Darwin" ]];
 then
-    antigen bundle brew # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/brew
-    antigen bundle macos # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx
+    antigen bundle robbyrussell/oh-my-zsh plugins/brew
+    antigen bundle robbyrussell/oh-my-zsh plugins/macos
 fi
 
 # https://github.com/romkatv/powerlevel10k#antigen
