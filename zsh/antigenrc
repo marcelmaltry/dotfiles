@@ -16,6 +16,7 @@ if [[ `uname` == "Darwin" ]];
 then
     antigen bundle robbyrussell/oh-my-zsh plugins/brew
     antigen bundle robbyrussell/oh-my-zsh plugins/macos
+    antigen bundle DarrinTisdale/zsh-aliases-exa
 fi
 
 # https://github.com/romkatv/powerlevel10k#antigen
