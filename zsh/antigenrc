@@ -1,22 +1,16 @@
 # https://github.com/zsh-users/antigen/wiki/Commands#oh-my-zsh
-# ZSH=${ANTIGEN_PATH}/bundles/robbyrussell/oh-my-zsh
 antigen use oh-my-zsh
 
 # Default repo bundles https://github.com/robbyrussell/oh-my-zsh#plugins
-# antigen bundle adb # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/adb
 antigen bundle colored-man-pages # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/colored-man-pages
 antigen bundle git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
 antigen bundle sudo # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sudo
-# antigen bundle vagrant # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/vagrant
 
 # zsh-users bundles https://github.com/zsh-users/
-# antigen bundle zsh-users/zsh-apple-touchbar # https://github.com/zsh-users/zsh-apple-touchbar
 antigen bundle zsh-users/zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions # https://github.com/zsh-users/zsh-completions
-# antigen bunlde zsh-users/zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 
 # Other bundles
-# antigen bundle MichaelAquilina/zsh-you-should-use # https://github.com/MichaelAquilina/zsh-you-should-use
 antigen bundle unixorn/autoupdate-antigen.zshplugin # https://github.com/unixorn/autoupdate-antigen.zshplugin
 antigen bundle zdharma-continuum/fast-syntax-highlighting # https://github.com/zdharma-continuum/fast-syntax-highlighting
 
@@ -32,9 +26,6 @@ antigen theme romkatv/powerlevel10k
 
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-apply
 antigen apply
-
-# https://github.com/zdharma/fast-syntax-highlighting/tree/master/themes
-# fast-theme default
 
 # https://github.com/zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd)
