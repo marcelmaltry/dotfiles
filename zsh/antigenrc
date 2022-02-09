@@ -1,3 +1,6 @@
+# https://github.com/zsh-users/antigen/wiki/Commands#antigen-use
+antigen use oh-my-zsh
+
 # oh-my-zsh bundles https://github.com/robbyrussell/oh-my-zsh/
 antigen bundle robbyrussell/oh-my-zsh plugins/colored-man-pages
 antigen bundle robbyrussell/oh-my-zsh plugins/git
