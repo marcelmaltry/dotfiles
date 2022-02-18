@@ -1,3 +1,5 @@
+#!/bin/sh
+#
 # colorize output of `tree`
 alias tree="tree -C"
 
@@ -7,3 +9,11 @@ alias n='nvim'
 # git
 alias glg='git lg'
 alias glga='git lga'
+
+# Source OS specific functions
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    source ${ZSH_PATH}/macos/aliases.sh
+else
+    source ${ZSH_PATH}/arch/aliases.sh
+fi

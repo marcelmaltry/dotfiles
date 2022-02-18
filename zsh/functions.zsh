@@ -5,13 +5,6 @@ mkcd() {
     mkdir -p "$@" && cd "$@";
 }
 
-# Download a list of urls
-aria() {
-    for x in "$@"; do
-        aria2c $x;
-    done
-}
-
 # Compress pdf with ghostscript
 compresspdf () {
     OLDNAME="$1"
@@ -38,3 +31,11 @@ termcolor()
     done
     echo ""
 }
+
+# Source OS specific functions
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    source ${ZSH_PATH}/macos/functions.sh
+else
+    source ${ZSH_PATH}/arch/functions.sh
+fi
