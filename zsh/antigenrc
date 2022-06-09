@@ -11,6 +11,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 
 # Other bundles
+antigen bundle greymd/docker-zsh-completion
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 
