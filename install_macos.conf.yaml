@@ -18,6 +18,15 @@
     ~/.gitconfig_github: git/gitconfig_github
     ~/.gitignore: git/gitignore
 
+# matplotlib
+- link:
+    ~/.matplotlib/stylelib/acm.mplstyle:
+      create: true
+      path: matplotlib/acm.mplstyle
+    ~/.matplotlib/stylelib/gemini.mplstyle:
+      create: true
+      path: matplotlib/gemini.mplstyle
+
 # neovim
 - link:
     ~/.config/nvim:

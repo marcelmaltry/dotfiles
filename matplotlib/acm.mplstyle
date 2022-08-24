@@ -1,0 +1,192 @@
+# vim: set filetype=sh:
+
+
+## ***************************************************************************
+## * LINES                                                                   *
+## ***************************************************************************
+## See https://matplotlib.org/api/artist_api.html#module-matplotlib.lines
+## for more information on line properties.
+
+lines.markersize: 1.5
+
+
+## ***************************************************************************
+## * PATCHES                                                                 *
+## ***************************************************************************
+## Patches are graphical objects that fill 2D space, like polygons or circles.
+## See https://matplotlib.org/api/artist_api.html#module-matplotlib.patches
+## for more information on patch properties.
+
+patch.linewidth: 0.1
+
+
+## ***************************************************************************
+## * BOXPLOT                                                                 *
+## ***************************************************************************
+
+boxplot.patchartist: True
+boxplot.boxprops.linewidth: 0
+boxplot.whiskerprops.linewidth: 0.1
+boxplot.capprops.linewidth: 0.1
+boxplot.medianprops.linewidth: 0.1
+
+
+## ***************************************************************************
+## * FONT                                                                    *
+## ***************************************************************************
+## The font properties used by `text.Text`.
+## See https://matplotlib.org/api/font_manager_api.html for more information
+## on font properties.  The 6 font properties used for font matching are
+## given below with their default values.
+##
+## The font.family property can take either a concrete font name (not supported
+## when rendering text with usetex), or one of the following five generic
+## values:
+##     - 'serif' (e.g., Times),
+##     - 'sans-serif' (e.g., Helvetica),
+##     - 'cursive' (e.g., Zapf-Chancery),
+##     - 'fantasy' (e.g., Western), and
+##     - 'monospace' (e.g., Courier).
+## Each of these values has a corresponding default list of font names
+## (font.serif, etc.); the first available font in the list is used.  Note that
+## for font.serif, font.sans-serif, and font.monospace, the first element of
+## the list (a DejaVu font) will always be used because DejaVu is shipped with
+## Matplotlib and is thus guaranteed to be available; the other entries are
+## left as examples of other possible values.
+##
+## The font.style property has three values: normal (or roman), italic
+## or oblique.  The oblique style will be used for italic, if it is not
+## present.
+##
+## The font.variant property has two values: normal or small-caps.  For
+## TrueType fonts, which are scalable fonts, small-caps is equivalent
+## to using a font size of 'smaller', or about 83%% of the current font
+## size.
+##
+## The font.weight property has effectively 13 values: normal, bold,
+## bolder, lighter, 100, 200, 300, ..., 900.  Normal is the same as
+## 400, and bold is 700.  bolder and lighter are relative values with
+## respect to the current weight.
+##
+## The font.stretch property has 11 values: ultra-condensed,
+## extra-condensed, condensed, semi-condensed, normal, semi-expanded,
+## expanded, extra-expanded, ultra-expanded, wider, and narrower.  This
+## property is not currently implemented.
+##
+## The font.size property is the default font size for text, given in points.
+## 10 pt is the standard value.
+##
+## Note that font.size controls default text sizes.  To configure
+## special text sizes tick labels, axes, labels, title, etc., see the rc
+## settings for axes and ticks.  Special text sizes can be defined
+## relative to font.size, using the following values: xx-small, x-small,
+## small, medium, large, x-large, xx-large, larger, or smaller
+
+# Configure ACM Fonts
+font.family:     Linux Libertine
+font.serif:      Linux Libertine #, DejaVu Serif, Bitstream Vera Serif, Computer Modern Roman, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
+font.sans-serif: Linux Biolinum #, DejaVu Sans, Bitstream Vera Sans, Computer Modern Sans Serif, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
+font.monospace:  Inconsolata #, DejaVu Sans Mono, Bitstream Vera Sans Mono, Computer Modern Typewriter, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
+font.size: 9.0
+
+
+## ***************************************************************************
+## * LaTeX                                                                   *
+## ***************************************************************************
+## For more information on LaTeX properties, see
+## https://matplotlib.org/tutorials/text/usetex.html
+
+text.usetex: True
+mathtext.fontset: cm
+
+
+## ***************************************************************************
+## * AXES                                                                    *
+## ***************************************************************************
+## Following are default face and edge colors, default tick sizes,
+## default font sizes for tick labels, and so on.  See
+## https://matplotlib.org/api/axes_api.html#module-matplotlib.axes
+
+axes.edgecolor: black
+axes.linewidth: 0.6
+axes.grid: True
+axes.grid.axis: both
+axes.grid.which: major
+axes.labelsize: x-small
+axes.formatter.use_mathtext: True
+axes.titlesize: small
+axes.titleweight: 800
+axes.titlepad: 2
+axes.labelpad: 2
+
+
+## ***************************************************************************
+## * TICKS                                                                   *
+## ***************************************************************************
+## See https://matplotlib.org/api/axis_api.html#matplotlib.axis.Tick
+
+xtick.bottom: True
+xtick.major.size: 2.5
+xtick.minor.size: 1.5
+xtick.major.width: 0.4
+xtick.minor.width: 0.3
+xtick.major.pad: 2
+xtick.minor.pad: 2
+xtick.color: black
+xtick.labelsize: xx-small
+xtick.minor.visible: False
+
+ytick.left: True
+ytick.major.size: 2.5
+ytick.minor.size: 1.5
+ytick.major.width: 0.4
+ytick.minor.width: 0.3
+ytick.major.pad: 2
+ytick.minor.pad: 2
+ytick.labelsize: xx-small
+ytick.minor.visible: False
+
+
+## ***************************************************************************
+## * GRIDS                                                                   *
+## ***************************************************************************
+grid.color:     b0b0b0  # grid color
+grid.linewidth: 0.4     # in points
+
+
+## ***************************************************************************
+## * LEGEND                                                                  *
+## ***************************************************************************
+legend.frameon: True
+legend.framealpha: 1
+legend.edgecolor: black
+legend.fontsize: xx-small
+legend.handlelength: 0.75
+legend.handletextpad: 0.4
+legend.markerscale: 0.75
+legend.title_fontsize: x-small
+legend.columnspacing: 0.8
+
+
+## ***************************************************************************
+## * FIGURE                                                                  *
+## ***************************************************************************
+## See https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure
+
+figure.titlesize: x-small
+figure.dpi: 300
+
+
+## ***************************************************************************
+## * SAVING FIGURES                                                          *
+## ***************************************************************************
+## The default savefig parameters can be different from the display parameters
+## e.g., you may want a higher resolution, or to make the figure
+## background white
+
+savefig.dpi: figure
+savefig.format: pdf
+savefig.bbox: tight
+savefig.pad_inches: 0
+savefig.transparent: True
+pdf.fonttype: 42 # TrueType
