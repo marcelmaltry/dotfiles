@@ -153,7 +153,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 "== Global configuration ===============================================================================================
 set background=dark
-colorscheme ron
+colorscheme default
 
 let mapleader=","
 set confirm
