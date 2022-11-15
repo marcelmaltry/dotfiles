@@ -18,13 +18,7 @@
     ~/.gitignore: git/gitignore
 
 # neovim
-- shell:
-    - ./neovim/install-vim_plug.sh
 - link:
-    ~/.config/nvim/init.vim:
+    ~/.config/nvim:
+      path: neovim
       create: true
-      force: true
-      path: neovim/init.vim
-    ~/.config/nvim/after: neovim/after
-    ~/.config/nvim/ftdetect: neovim/ftdetect
-    ~/.config/nvim/syntax: neovim/syntax

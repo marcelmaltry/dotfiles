@@ -22,6 +22,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'mh21/errormarker.vim', { 'for': ['c', 'cpp'] }
 Plug 'mhinz/vim-grepper'
 Plug 'powerman/vim-plugin-viewdoc'
@@ -233,25 +234,25 @@ let g:python_host_skip_check = 1
 let g:python3_host_skip_check = 1
 
 "== Functions & Commands ===============================================================================================
-function! CrosshairToggle()
-    if (&cursorcolumn == 1)
-        setlocal nocursorcolumn
-        echo "Crosshair: Off"
-    else
-        setlocal cursorcolumn
-        echo "Crosshair: On"
-    endif
-endfunction
+" function! CrosshairToggle()
+    " if (&cursorcolumn == 1)
+        " setlocal nocursorcolumn
+        " echo "Crosshair: Off"
+    " else
+        " setlocal cursorcolumn
+        " echo "Crosshair: On"
+    " endif
+" endfunction
 
-function! ToggleParagraph()
-    if &formatoptions =~ "a"
-        setlocal formatoptions-=a
-        echo "Paragraphs: Off"
-    else
-        setlocal formatoptions+=a
-        echo "Paragraphs: On"
-    endif
-endfunction
+" function! ToggleParagraph()
+    " if &formatoptions =~ "a"
+        " setlocal formatoptions-=a
+        " echo "Paragraphs: Off"
+    " else
+        " setlocal formatoptions+=a
+        " echo "Paragraphs: On"
+    " endif
+" endfunction
 
 function! SpellToggle()
     if (&spell == 1)
@@ -263,60 +264,60 @@ function! SpellToggle()
     endif
 endfunction
 
-function! SaveAndQuit()
-    exe "mksession! .session.vim"
-    exe "wqa"
-endfunction
+" function! SaveAndQuit()
+    " exe "mksession! .session.vim"
+    " exe "wqa"
+" endfunction
 
-function! VSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+" function! VSearch(direction) range
+"     let l:saved_reg = @"
+"     execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+"     let l:pattern = escape(@", '\\/.*$^~[]')
+"     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
+"     if a:direction == 'b'
+"         execute "normal ?" . l:pattern . "^M"
+"     elseif a:direction == 'f'
+"         execute "normal /" . l:pattern . "^M"
+"     elseif a:direction == 'gv'
+"         call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+"     elseif a:direction == 'replace'
+"         call CmdLine("%s" . '/'. l:pattern . '/')
+"     endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+"     let @/ = l:pattern
+"     let @" = l:saved_reg
+" endfunction
 
-command! -nargs=1 V :vertical resize <args>
-command! Q call SaveAndQuit()
+" command! -nargs=1 V :vertical resize <args>
+" command! Q call SaveAndQuit()
 command! DeleteTrailingWs :%s/\s\+$//
 command! Untab2 :%s\t/  /g
 command! Untab4 :%s\t/    /g
 
 "== Key mapping ========================================================================================================
-tmap <A-h> <C-\><C-n><C-w>h
-tmap <A-j> <C-\><C-n><C-w>j
-tmap <A-k> <C-\><C-n><C-w>k
-tmap <A-l> <C-\><C-n><C-w>l
-nmap <A-h> <C-w>h
-nmap <A-j> <C-w>j
-nmap <A-k> <C-w>k
-nmap <A-l> <C-w>l
+" tmap <A-h> <C-\><C-n><C-w>h
+" tmap <A-j> <C-\><C-n><C-w>j
+" tmap <A-k> <C-\><C-n><C-w>k
+" tmap <A-l> <C-\><C-n><C-w>l
+" nmap <A-h> <C-w>h
+" nmap <A-j> <C-w>j
+" nmap <A-k> <C-w>k
+" nmap <A-l> <C-w>l
 
 nmap <silent> <F2> :NERDTree<CR>
 nmap <silent> <F3> :call SpellToggle()<CR>
-nmap <silent> <F4> :call CrosshairToggle()<CR>
+" nmap <silent> <F4> :call CrosshairToggle()<CR>
 nmap <silent> <F5> :AsyncRun ninja -C build/debug<CR>
-nmap <silent> <F6> :cl<CR>
+" nmap <silent> <F6> :cl<CR>
 
 nmap <silent> <A-w> gwgw
 imap <silent> <A-w> <C-o>gwgw
 xmap <silent> <A-w> gw
 
 vmap <silent> <C-s> :sort i<CR>
-vmap <silent> <C-r> :!tac<CR>
+" vmap <silent> <C-r> :!tac<CR>
 
 nmap <silent> <C-c> :call nerdcommenter#Comment(0, "toggle")<CR>
 vmap <silent> <C-c> :call nerdcommenter#Comment(1, "toggle")<CR>
@@ -326,30 +327,30 @@ nmap <silent> <S-Tab> :tabprevious<CR>
 
 nmap <S-t> :tabnew <C-d>
 
-nmap <silent> <leader>ff :FSHere<CR>
-nmap <silent> <leader>fh <C-W>v<C-W>h:FSHere<CR>
-nmap <silent> <leader>fk <C-W>s<C-W>k:FSHere<CR>
-nmap <silent> <leader>fj <C-W>s:FSHere<CR>
-nmap <silent> <leader>fl <C-W>v:FSHere<CR>
-nmap <silent> <leader>ft :tabnew %<CR>:FSHere<CR>
+" nmap <silent> <leader>ff :FSHere<CR>
+" nmap <silent> <leader>fh <C-W>v<C-W>h:FSHere<CR>
+" nmap <silent> <leader>fk <C-W>s<C-W>k:FSHere<CR>
+" nmap <silent> <leader>fj <C-W>s:FSHere<CR>
+" nmap <silent> <leader>fl <C-W>v:FSHere<CR>
+" nmap <silent> <leader>ft :tabnew %<CR>:FSHere<CR>
 
-nmap <silent> <leader>l :exe "source .session.vim"<CR>
+" nmap <silent> <leader>l :exe "source .session.vim"<CR>
 
-nmap <silent> <leader>p :call ToggleParagraph()<CR>
+" nmap <silent> <leader>p :call ToggleParagraph()<CR>
 
-nmap <silent> <BS> :DeleteTrailingWs<CR>
+" nmap <silent> <BS> :DeleteTrailingWs<CR>
 
-vmap <silent> * :call VSearch('f')<CR>
-vmap <silent> # :call VSearch('b')<CR>
+" vmap <silent> * :call VSearch('f')<CR>
+" vmap <silent> # :call VSearch('b')<CR>
 
-nmap <silent> <leader>gn :call grammarous#move_to_next_error(getpos('.')[1 : 2], b:grammarous_result)<CR>:call grammarous#create_and_jump_to_info_window_of(b:grammarous_result)<CR>
-nmap <silent> <leader>gN :call grammarous#move_to_previous_error(getpos('.')[1 : 2], b:grammarous_result)<CR>:call grammarous#create_and_jump_to_info_window_of(b:grammarous_result)<CR>
+" nmap <silent> <leader>gn :call grammarous#move_to_next_error(getpos('.')[1 : 2], b:grammarous_result)<CR>:call grammarous#create_and_jump_to_info_window_of(b:grammarous_result)<CR>
+" nmap <silent> <leader>gN :call grammarous#move_to_previous_error(getpos('.')[1 : 2], b:grammarous_result)<CR>:call grammarous#create_and_jump_to_info_window_of(b:grammarous_result)<CR>
 
-autocmd Filetype ipynb nmap <silent> <leader>b :VimpyterInsertPythonBlock<CR>
-autocmd Filetype ipynb nmap <silent> <leader>j :VimpyterStartJupyter<CR>
-autocmd Filetype ipynb nmap <silent> <leader>n :VimpyterStartNteract<CR>
+" autocmd Filetype ipynb nmap <silent> <leader>b :VimpyterInsertPythonBlock<CR>
+" autocmd Filetype ipynb nmap <silent> <leader>j :VimpyterStartJupyter<CR>
+" autocmd Filetype ipynb nmap <silent> <leader>n :VimpyterStartNteract<CR>
 
 " Project-specific configuration
-if filereadable(".project.vim")
-    source .project.vim
-endif
+" if filereadable(".project.vim")
+    " source .project.vim
+" endif
