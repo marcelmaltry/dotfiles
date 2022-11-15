@@ -1,6 +1,6 @@
 # COLOR DEFINITIONS
 DEFAULT_FOREGROUND=white
-DEFAULT_BACKGROUND=black
+DEFAULT_BACKGROUND=grey
 
 # https://github.com/ryanoasis/nerd-fonts
 POWERLEVEL9K_MODE='nerdfont-complete'
