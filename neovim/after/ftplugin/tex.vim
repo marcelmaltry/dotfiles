@@ -1,5 +1,5 @@
 setlocal spell
-setlocal spelllang=en_us
+setlocal spelllang=en_us,de_de
 
 setlocal wrap
 setlocal linebreak
@@ -10,5 +10,3 @@ nmap j gj
 nmap k gk
 nmap $ g$
 nmap 0 g0
-
-nmap <silent> <F5> :AsyncRun make<CR>
