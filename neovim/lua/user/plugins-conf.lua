@@ -36,6 +36,15 @@ function M.setup()
     ----- nvim-tree {{{-------------------------------------------------------------------------------------------------
     require("nvim-tree").setup()
 
+    ----- nvim-tree {{{-------------------------------------------------------------------------------------------------
+    require'nvim-treesitter.configs'.setup({
+        ensure_installed = { python, cpp, c, latex },
+        auto_install = false,
+        highlight = {
+            enable = true,
+        },
+    })
+
 end
 
 return M
