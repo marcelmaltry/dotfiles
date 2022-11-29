@@ -2,3 +2,5 @@
     name = Marcel Maltry
     email = mmaltry+github@mailbox.org
     signingkey = C7B24A2F094E4605
+[commit]
+    gpgsign = true

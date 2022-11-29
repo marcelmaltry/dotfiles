@@ -2,3 +2,5 @@
     name = Marcel Dario Maltry
     email = marcel.maltry@bigdata.uni-saarland.de
     signingkey = 115BC44C6D5AC7B8
+[commit]
+    gpgsign = true

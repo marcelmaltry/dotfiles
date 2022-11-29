@@ -1,14 +1,12 @@
 [user]
     name = Marcel Maltry
     email = mmaltry+github@mailbox.org
-    signingkey = 4CFAC276B095095C
 [pull]
     rebase = true
 [push]
     default = tracking
 [commit]
     verbose = true
-    gpgsign = true
 [merge]
     tool = nvimdiff
     defaultToUpstream = true
