@@ -28,10 +28,6 @@ function M.setup()
             requires = { 'nvim-tree/nvim-web-devicons', },
             tag = 'nightly'
         }
-        use {
-            'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate'
-        }
 
         -- Automatically set up your configuration after cloning packer.nvim.  Put this at the end after all plugins.
         if packer_bootstrap then
