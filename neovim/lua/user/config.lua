@@ -22,6 +22,9 @@ function M.setup()
     -- avoid some other messages. It is a list of flags.
     vim.g.shortmess = 'filnxtToOFc'
 
+    -- Disable mouse input in neovim
+    vim.opt.mouse = nil
+
     ----- Visuals {{{---------------------------------------------------------------------------------------------------
     -- Enables 24-bit RGB color in the TUI.
     vim.opt.termguicolors = true
