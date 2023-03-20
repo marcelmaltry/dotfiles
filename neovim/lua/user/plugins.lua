@@ -28,6 +28,14 @@ function M.setup()
             requires = { 'nvim-tree/nvim-web-devicons', },
             tag = 'nightly'
         }
+        use {
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-buffer',
+                'f3fora/cmp-spell',
+                'hrsh7th/cmp-path',
+            }
+        }
 
         -- Automatically set up your configuration after cloning packer.nvim.  Put this at the end after all plugins.
         if packer_bootstrap then
