@@ -8,8 +8,14 @@ fi
 # Set up JAVA_HOME to use JDK
 if [[ "$OSTYPE" == "darwin"* ]];
 then
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.8` # openjdk-8
-#    export JAVA_HOME=`/usr/libexec/java_home -v 12` # openjdk-12
+    export JAVA_HOME="/usr/libexec/java_home -v 1.8" # openjdk-8
+#    export JAVA_HOME="/usr/libexec/java_home -v 12" # openjdk-12
+fi
+
+# Set up Google depot_tools
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export PATH="$PATH:/opt/depot_tools"
 fi
 
 # Set up locale
