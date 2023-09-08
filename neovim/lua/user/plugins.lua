@@ -29,12 +29,28 @@ function M.setup()
             tag = 'nightly'
         }
         use {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 300
+            end
+        }
+        use {
             'hrsh7th/nvim-cmp',
             requires = {
                 'hrsh7th/cmp-buffer',
                 'f3fora/cmp-spell',
                 'hrsh7th/cmp-path',
+                'hrsh7th/cmp-nvim-lsp',
             }
+        }
+        use {
+            "williamboman/mason.nvim",
+            run = ":MasonUpdate"
+        }
+        use {
+                "williamboman/mason-lspconfig.nvim",
+                "neovim/nvim-lspconfig",
         }
 
         -- Automatically set up your configuration after cloning packer.nvim.  Put this at the end after all plugins.
