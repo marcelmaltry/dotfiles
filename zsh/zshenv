@@ -18,6 +18,12 @@ then
     export PATH="$PATH:/opt/depot_tools"
 fi
 
+# Set up postgresql binaries
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export PATH="$PATH:/usr/local/opt/postgresql@15/bin"
+fi
+
 # Set up locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
