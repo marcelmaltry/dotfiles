@@ -15,3 +15,7 @@ __pycache__
 
 # TexPad
 .texpadtmp 
+
+# CMake
+.cache
+compile_commands.json
