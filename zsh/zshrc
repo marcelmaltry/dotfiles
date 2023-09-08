@@ -29,6 +29,9 @@ export NINJA_STATUS="[%p|%s/%t|%es]"
 # https://www.chromium.org/developers/how-tos/depottools/#disabling-auto-update
 export DEPOT_TOOLS_UPDATE=0
 
+# Disable AddressSanitizerContainerOverflow to suppress warning for potential false positives
+export ASAN_OPTIONS=detect_container_overflow=0
+
 #########################
 # ANTIGEN CONFIGURATION #
 #########################
