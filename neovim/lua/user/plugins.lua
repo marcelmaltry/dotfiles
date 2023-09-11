@@ -46,11 +46,8 @@ function M.setup()
         }
         use {
             "williamboman/mason.nvim",
-            run = ":MasonUpdate"
-        }
-        use {
-                "williamboman/mason-lspconfig.nvim",
-                "neovim/nvim-lspconfig",
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
         }
 
         -- Automatically set up your configuration after cloning packer.nvim.  Put this at the end after all plugins.
