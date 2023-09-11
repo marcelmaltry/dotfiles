@@ -123,6 +123,8 @@ function M.setup()
         capabilities = capabilities,
     }
 
+    require('lspconfig')['pylsp'].setup({})
+
 end
 
 return M
