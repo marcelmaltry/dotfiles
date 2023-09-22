@@ -1,10 +1,13 @@
 #!/bin/sh
-#
+
 # colorize output of `tree`
 alias tree="tree -C"
 
 # neovim
 alias n='nvim'
+
+# eza
+alias ls='eza'
 
 # git
 alias glg='git lg'

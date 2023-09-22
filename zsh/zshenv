@@ -24,6 +24,12 @@ then
     export PATH="$PATH:/usr/local/opt/postgresql@15/bin"
 fi
 
+# Set up eza completions
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export FPATH="/usr/local/opt/eza/completions/zsh:$FPATH"
+fi
+
 # Set up locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
