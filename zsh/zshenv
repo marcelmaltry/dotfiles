@@ -21,7 +21,7 @@ fi
 # Set up postgresql binaries
 if [[ "$OSTYPE" == "darwin"* ]];
 then
-    export PATH="$PATH:/usr/local/opt/postgresql@15/bin"
+    export PATH="$PATH:/usr/local/opt/postgresql@16/bin"
 fi
 
 # Set up eza completions
