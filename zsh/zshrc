@@ -12,8 +12,8 @@ export DIFFPROG='nvim -d'
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
 if [[ `uname` == "Darwin" ]];
 then
-    export CC=/usr/local/opt/llvm/bin/clang
-    export CXX=/usr/local/opt/llvm/bin/clang++
+    export CC=/usr/local/opt/llvm@16/bin/clang
+    export CXX=/usr/local/opt/llvm@16/bin/clang++
 #    export MACOSX_DEPLOYMENT_TARGET=10.15 # required for C++17 any, variant, optional, filesystem
 elif [[ `uname` == "Linux" ]];
 then
