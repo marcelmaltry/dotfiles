@@ -19,3 +19,6 @@ __pycache__
 # CMake
 .cache
 compile_commands.json
+
+# CLion
+.idea
