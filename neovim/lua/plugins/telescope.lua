@@ -4,11 +4,12 @@ return {
         build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
     },
     { 'nvim-telescope/telescope.nvim',
-        tag = '0.1.2',
+        tag = '0.1.4',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-fzf-native.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
+            'BurntSushi/ripgrep',
             'folke/which-key.nvim',
         },
         config = function()
@@ -30,6 +31,7 @@ return {
             require'which-key'.register({
                 name = 'Telescope',
                 f = { function() require('telescope.builtin').find_files() end, 'Find file' },
+                a = { function() require('telescope.builtin').live_grep() end, 'Live grep' },
                 b = { function() require('telescope.builtin').buffers() end, 'Select buffer' },
                 c = { function() require('telescope.builtin').tags() end, 'Select ctag' },
                 g = {
