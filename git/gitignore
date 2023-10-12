@@ -14,7 +14,7 @@ session.vim
 __pycache__
 
 # TexPad
-.texpadtmp 
+.texpadtmp
 
 # CMake
 .cache
