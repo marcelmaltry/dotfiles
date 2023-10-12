@@ -5,6 +5,7 @@ zsh/.antigen/*
 # neovim
 neovim/plugin/*
 neovim/undo/*
+neovim/lazy-lock.json
 
 # osx
 *.DS_Store
