@@ -1,4 +1,4 @@
--- global neovim configuration
+-- This file provides the global NVim configuration
 local M = { }
 
 function M.setup()
@@ -8,7 +8,7 @@ function M.setup()
 
     -- When this option is set, the screen will not be redrawn while executing macros, registers and other commands that
     -- have not been typed.
-    vim.opt.lazyredraw = true
+    vim.opt.lazyredraw = false
 
     -- Changes the effect of the |:mksession| command.  It is a comma- separated list of words.  Each word enables
     -- saving and restoring something.
@@ -28,21 +28,21 @@ function M.setup()
     ----- Visuals {{{---------------------------------------------------------------------------------------------------
     -- Enables 24-bit RGB color in the TUI.
     vim.opt.termguicolors = true
-
-    -- When set to "dark" or "light", adjusts the default color groups for that background type.
+    --When set to "dark" or "light", adjusts the default color groups for that background type.
     vim.opt.background = 'dark'
-
-    -- Highlight the text line of the cursor with CursorLine |hl-CursorLine|.
-    vim.opt.cursorline = true
-    vim.cmd("hi! CursorLine term=reverse")
-
-    -- Highlight the line number of the cursor with CursorLineNr |hl-CursorLineNr|.
-    vim.cmd("hi! CursorLineNr term=reverse")
 
     -- 'colorcolumn' is a comma-separated list of screen columns that are highlighted with ColorColumn |hl-ColorColumn|.
     -- Useful to align text.
     vim.opt.colorcolumn = '121'
-    vim.cmd("hi! ColorColumn term=reverse cterm=reverse")
+
+    -- Highlight the text line of the cursor with CursorLine |hl-CursorLine|.
+    vim.opt.cursorline = true
+
+    -- Configure colors of cursorline and colorcolumn
+    vim.cmd[[
+    hi! ColorColumn term=reverse cterm=reverse
+    hi! CursorLineNr term=bold,reverse cterm=bold,reverse ctermfg=6
+    ]]
 
     -- Print the line number in front of each line.
     vim.opt.number = true
@@ -70,7 +70,6 @@ function M.setup()
     -- The value of this option influences when the last window will have a status line:
     --      3: always and ONLY the last window
     vim.opt.laststatus = 3
-
     --}}}---------------------------------------------------------------------------------------------------------------
 
     -- Use a dialog when an operation has to be confirmed.
