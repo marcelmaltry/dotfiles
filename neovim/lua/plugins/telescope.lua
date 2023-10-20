@@ -23,7 +23,19 @@ return {
                         case_mode = 'smart_case',        -- or "ignore_case" or "respect_case"
                     },
                     ['ui-select'] = { require('telescope.themes').get_dropdown { } }
-                }
+                },
+                pickers = {
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<C-Esc>"] = require("telescope.actions").delete_buffer,
+                            },
+                            n = {
+                                ["<C-Esc>"] = require("telescope.actions").delete_buffer,
+                            }
+                        }
+                    }
+                },
             }
             ts.load_extension'fzf'
             ts.load_extension'ui-select'
