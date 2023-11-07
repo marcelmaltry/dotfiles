@@ -8,7 +8,7 @@
 
 # zsh
 - link:
-    ~/.zshenv: zsh/zshenv
+    ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
 
 # git

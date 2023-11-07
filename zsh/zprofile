@@ -1,0 +1,67 @@
+#!/bin/zsh
+# Set up macOS-specific variables
+if [[ `uname` == "Darwin" ]];
+then
+    # Set up PATH to find Homebrew installed binaries.
+    # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
+    export PATH="$PATH:/usr/local/sbin"
+
+    # Set up Google depot_tools
+    export PATH="$PATH:/opt/depot_tools"
+
+    # Set up postgresql binaries
+    export PATH="$PATH:/usr/local/opt/postgresql@16/bin"
+
+    # Set up python to point to Homebrew's version
+    export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+
+    # Set up eza completions
+    export FPATH="$(brew --prefix)/opt/eza/completions/zsh:$FPATH"
+
+    # Set up JAVA_HOME to use JDK
+    export JAVA_HOME="/usr/libexec/java_home -v 1.8" # openjdk-8
+    # export JAVA_HOME="/usr/libexec/java_home -v 12" # openjdk-12
+
+    # Suppress the following warning:
+    # `malloc: nano zone abandoned due to inability to reserve vm space.`
+    export MallocNanoZone=0
+
+    # Disable AddressSanitizerContainerOverflow to suppress warning for potential false positives
+    export ASAN_OPTIONS=detect_container_overflow=0
+
+    # Set PostgreSQL 15 directory for easier start and stop of the server.
+    export PGDATA="/usr/local/var/postgresql@16"
+fi
+
+# Set up locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Set up dofiles path
+export DOTFILES=${HOME}/.dotfiles
+
+# Set up default utilities.
+export EDITOR=nvim
+export VISUAL=nvim
+export PAGER=less
+export DIFFPROG='nvim -d'
+
+# Set up default C and C++ compilers.
+# https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
+if [[ `uname` == "Darwin" ]];
+then
+    export CC=/usr/local/opt/llvm@16/bin/clang
+    export CXX=/usr/local/opt/llvm@16/bin/clang++
+elif [[ `uname` == "Linux" ]];
+then
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
+fi
+
+# Set up ninja output format.
+# https://ninja-build.org/manual.html#_environment_variables
+export NINJA_STATUS="[%p|%s/%t|%es]"
+
+# Disable depot_tools updates
+# https://www.chromium.org/developers/how-tos/depottools/#disabling-auto-update
+export DEPOT_TOOLS_UPDATE=0
