@@ -10,13 +10,13 @@ then
     export PATH="$PATH:/opt/depot_tools"
 
     # Set up postgresql binaries
-    export PATH="$PATH:/usr/local/opt/postgresql@16/bin"
+    export PATH="$PATH:$(brew --prefix postgresql@16)/bin"
 
     # Set up python to point to Homebrew's version
-    export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+    export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
     # Set up eza completions
-    export FPATH="$(brew --prefix)/opt/eza/completions/zsh:$FPATH"
+    export FPATH="$(brew --prefix eza)/completions/zsh:$FPATH"
 
     # Set up JAVA_HOME to use JDK
     export JAVA_HOME="/usr/libexec/java_home -v 1.8" # openjdk-8
