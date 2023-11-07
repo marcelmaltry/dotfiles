@@ -24,6 +24,12 @@ then
     export PATH="$PATH:/usr/local/opt/postgresql@16/bin"
 fi
 
+# Set `python` to Homebrew version
+if [[ "$OSTYPE" == "darwin"* ]];
+then
+    export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+fi
+
 # Set up eza completions
 if [[ "$OSTYPE" == "darwin"* ]];
 then
