@@ -9,7 +9,7 @@ then
     # Set up Google depot_tools
     export PATH="$PATH:/opt/depot_tools"
 
-    # Set up postgresql binaries
+    # Set up PostgreSQL binaries
     export PATH="$PATH:$(brew --prefix postgresql@16)/bin"
 
     # Set up python to point to Homebrew's version
@@ -29,7 +29,7 @@ then
     # Disable AddressSanitizerContainerOverflow to suppress warning for potential false positives
     export ASAN_OPTIONS=detect_container_overflow=0
 
-    # Set PostgreSQL 15 directory for easier start and stop of the server.
+    # Set PostgreSQL directory for easier start and stop of the server.
     export PGDATA="/usr/local/var/postgresql@16"
 fi
 
