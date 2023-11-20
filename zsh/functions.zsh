@@ -32,6 +32,15 @@ termcolor()
     echo ""
 }
 
+# Configure zoxide completion
+if [ -x "$(which zoxide)" ];
+then
+    function z () {
+        __zoxide_z "$@"
+    }
+    eval "$(zoxide init zsh --no-cmd)"
+fi
+
 # Source OS specific functions
 if [[ "$OSTYPE" == "darwin"* ]];
 then
