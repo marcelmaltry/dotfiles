@@ -50,8 +50,8 @@ export DIFFPROG='nvim -d'
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
 if [[ `uname` == "Darwin" ]];
 then
-    export CC=/usr/local/opt/llvm@17/bin/clang
-    export CXX=/usr/local/opt/llvm@17/bin/clang++
+    export CC="$(brew --prefix llvm)/bin/clang"
+    export CXX="$(brew --prefix llvm)/bin/clang++"
 elif [[ `uname` == "Linux" ]];
 then
     export CC=/usr/bin/clang
