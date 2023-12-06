@@ -6,6 +6,10 @@
 # clean
 - clean: ['~', '~/.config', '~/.config/nvim']
 
+# wezterm
+- link:
+    ~/.wezterm.lua: wezterm/wezterm.lua
+
 # zsh
 - link:
     ~/.zprofile: zsh/zprofile
