@@ -47,7 +47,12 @@ config.colors = {
             fg_color = color_fg,
         },
     },
+    scrollbar_thumb = color_sel,
 }
+
+-- scrollback and scrollbar
+config.scrollback_lines = 10000
+config.enable_scroll_bar = true
 
 -- cursor
 config.default_cursor_style = 'BlinkingBar'
