@@ -2,18 +2,8 @@
 
 set -e
 
-if [[ `uname` == "Darwin" ]];
-then
-    echo "Installing .dotfiles for macOS..."
-    CONFIG="install_macos.conf.yaml"
-elif [[ `uname` == "Linux" ]];
-then
-    echo "Installing .dotfiles for ArchLinux..."
-    CONFIG="install_arch.conf.yaml"
-else
-    echo "OS not supported."
-    exit 1
-fi
+echo "Installing .dotfiles ..."
+CONFIG="install.conf.yaml"
 DOTBOT_DIR="third_party/dotbot"
 
 DOTBOT_BIN="bin/dotbot"
