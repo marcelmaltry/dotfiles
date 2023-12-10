@@ -7,7 +7,10 @@ alias tree="tree -C"
 alias n='nvim'
 
 # eza
-alias ls='eza'
+if command -v eza &> /dev/null
+then
+    alias ls='eza'
+fi
 
 # git
 alias glg='git lg'
