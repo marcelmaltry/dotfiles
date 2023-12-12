@@ -31,6 +31,9 @@ then
 
     # Set PostgreSQL directory for easier start and stop of the server.
     export PGDATA="/usr/local/var/postgresql@16"
+
+    # Add llvm clang to PATH
+    export PATH="$(brew --prefix llvm)/bin:$PATH"
 fi
 
 # Set up locale
