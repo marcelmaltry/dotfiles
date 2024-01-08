@@ -27,3 +27,7 @@
     ~/.config/nvim:
       path: neovim
       create: true
+
+# latex
+- link:
+    ~/.latexmkrc: latex/latexmkrc
