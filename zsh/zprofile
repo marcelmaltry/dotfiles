@@ -6,9 +6,6 @@ then
     # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
     export PATH="$PATH:/usr/local/sbin"
 
-    # Set up Google depot_tools
-    export PATH="$PATH:/opt/depot_tools"
-
     # Set up PostgreSQL binaries
     export PATH="$PATH:$(brew --prefix postgresql@16)/bin"
 
@@ -64,6 +61,9 @@ fi
 # Set up ninja output format.
 # https://ninja-build.org/manual.html#_environment_variables
 export NINJA_STATUS="[%p|%s/%t|%es]"
+
+# Set up Google depot_tools
+export PATH="$PATH:/opt/depot_tools"
 
 # Disable depot_tools updates
 # https://www.chromium.org/developers/how-tos/depottools/#disabling-auto-update
