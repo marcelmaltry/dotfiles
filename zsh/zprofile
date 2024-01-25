@@ -16,7 +16,7 @@ then
     export FPATH="$(brew --prefix eza)/completions/zsh:$FPATH"
 
     # Set up JAVA_HOME to use JDK
-    export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
+    export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
 
     # Suppress the following warning:
     # `malloc: nano zone abandoned due to inability to reserve vm space.`
