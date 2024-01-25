@@ -130,6 +130,16 @@ return {
                     }
                 end,
                 capabilities = capabilities,
+                settings = {
+                    ltex = {
+                        -- languageToolOrg = {
+                            -- username = "<your_email>",
+                            -- apiKey = "<your_api_key>",
+                        -- },
+                        -- languageToolHttpServerUri = "https://api.languagetoolplus.com",
+                        checkFrequency = "save",
+                    }
+                }
             }
 
             lsp['texlab'].setup{
