@@ -43,6 +43,7 @@ return {
             'folke/which-key.nvim',
             'https://git.sr.ht/~p00f/clangd_extensions.nvim',
             'nvim-lua/lsp-status.nvim',
+            'barreiroleo/ltex_extra.nvim',
         },
         config = function()
             local lsp = require'lspconfig'
@@ -99,6 +100,8 @@ return {
                     ['v<tab>'] = { '<cmd>vsplit<cr><cmd>ClangdSwitchSourceHeader<cr>', 'Open source/header file in vertical split' },
                 }, { prefix = '<leader>l', buffer = bufnr })
                 --}}}---------------------------------------------------------------------------------------------------
+
+                lsp_status.on_attach(client)
             end
 
             local capabilities = require'cmp_nvim_lsp'.default_capabilities()
@@ -110,15 +113,22 @@ return {
                     -- Clangd extensions
                     require("clangd_extensions.inlay_hints").setup_autocmd()
                     require("clangd_extensions.inlay_hints").set_inlay_hints()
-                    -- lsp-status
-                    lsp_status.on_attach(client)
                 end,
                 capabilities = capabilities,
                 handlers = lsp_status.extensions.clangd.setup(),
+                init_options = {
+                    clangdFileStatus = true,
+                },
             }
 
             lsp['ltex'].setup{
-                on_attach = on_attach,
+                on_attach = function(client, bufnr)
+                    on_attach(client, bufnr)
+                    require("ltex_extra").setup{
+                        load_langs = { 'en_US', 'de_DE', },
+                        path = '.ltex',
+                    }
+                end,
                 capabilities = capabilities,
             }
 
@@ -146,6 +156,10 @@ return {
                 on_attach = on_attach,
                 capabilities = capabilities,
             }
+
+            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+                border = "rounded",
+            })
         end,
     },
 }
