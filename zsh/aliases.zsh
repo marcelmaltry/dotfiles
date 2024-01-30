@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # colorize output of `tree`
-alias tree="tree -C"
+alias tree="eza -T"
 
 # neovim
 alias n='nvim'
