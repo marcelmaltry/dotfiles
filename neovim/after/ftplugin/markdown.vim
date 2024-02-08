@@ -1,9 +1,9 @@
 setlocal spell
-setlocal spelllang=en_us
+setlocal spelllang=en_us,de_de
 
 setlocal wrap
 setlocal linebreak
-setlocal textwidth=0
+setlocal textwidth=120
 setlocal wrapmargin=0
 
 nmap j gj
