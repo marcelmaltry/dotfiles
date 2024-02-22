@@ -10,7 +10,7 @@ then
     export PATH="$PATH:$(brew --prefix postgresql@16)/bin"
 
     # Set up python to point to Homebrew's version
-    export PATH="$(brew --prefix python)/libexec/bin:$PATH"
+    export PATH="$(brew --prefix python@3.11)/libexec/bin:$PATH"
 
     # Set up eza completions
     export FPATH="$(brew --prefix eza)/completions/zsh:$FPATH"
