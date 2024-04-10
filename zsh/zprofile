@@ -2,6 +2,12 @@
 # Set up macOS-specific variables
 if [[ `uname` == "Darwin" ]];
 then
+    # Add Homebrew to PATH on Apple Silicon
+    if [[ `uname -m` == "arm64" ]];
+    then
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
+
     # Set up PATH to find Homebrew installed binaries.
     # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
     export PATH="$PATH:/usr/local/sbin"
