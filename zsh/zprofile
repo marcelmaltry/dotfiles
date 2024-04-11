@@ -2,10 +2,15 @@
 # Set up macOS-specific variables
 if [[ `uname` == "Darwin" ]];
 then
-    # Add Homebrew to PATH on Apple Silicon
+    # Apple Silicon specific settings
     if [[ `uname -m` == "arm64" ]];
     then
+        # Add Homebrew to PATH on Apple Silicon
         export PATH="/opt/homebrew/bin:$PATH"
+
+        # Set paths to find libraries
+        export CPATH=/opt/homebrew/include
+        export LIBRARY_PATH=/opt/homebrew/lib
     fi
 
     # Set up PATH to find Homebrew installed binaries.
