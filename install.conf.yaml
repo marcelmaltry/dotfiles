@@ -31,3 +31,7 @@
 # latex
 - link:
     ~/.latexmkrc: latex/latexmkrc
+
+# config
+- link:
+    ~/.config/pycodestyle: config/pycodestyle
