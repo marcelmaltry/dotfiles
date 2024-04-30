@@ -181,6 +181,9 @@ function M.setup()
     -- The name of the font that will be used for |:hardcopy|. See |pfn-option|.
     vim.g.printfont = 'Courier:h8'
 
+    -- Set default tex_flavor for filetype-specific options to be loaded.
+    vim.g.tex_flavor = "latex"
+
 end
 
 return M
