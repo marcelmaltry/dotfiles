@@ -40,7 +40,7 @@ then
     export PGDATA="/usr/local/var/postgresql@16"
 
     # Add llvm clang to PATH
-    export PATH="$(brew --prefix llvm)/bin:$PATH"
+    export PATH="$(brew --prefix llvm@17)/bin:$PATH"
 fi
 
 # Set up locale
@@ -60,8 +60,8 @@ export DIFFPROG='nvim -d'
 # https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html
 if [[ `uname` == "Darwin" ]];
 then
-    export CC="$(brew --prefix llvm)/bin/clang"
-    export CXX="$(brew --prefix llvm)/bin/clang++"
+    export CC="$(brew --prefix llvm@17)/bin/clang"
+    export CXX="$(brew --prefix llvm@17)/bin/clang++"
 elif [[ `uname` == "Linux" ]];
 then
     export CC=/usr/bin/clang
