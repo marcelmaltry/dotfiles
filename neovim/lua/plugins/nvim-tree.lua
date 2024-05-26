@@ -6,7 +6,7 @@ return {
         },
         config = function()
             require'nvim-tree'.setup{
-                view = { width = 40 },
+                view = { adaptive_size = true },
             }
             require'which-key'.register({
                 name = 'NVim Tree',
