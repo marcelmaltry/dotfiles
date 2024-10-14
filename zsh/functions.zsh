@@ -44,7 +44,7 @@ fi
 # Source OS specific functions
 if [[ "$OSTYPE" == "darwin"* ]];
 then
-    source ${ZSH_PATH}/macos/functions.sh
+    source ${ZSH_PATH}/macos/functions.zsh
 else
-    source ${ZSH_PATH}/arch/functions.sh
+    source ${ZSH_PATH}/arch/functions.zsh
 fi

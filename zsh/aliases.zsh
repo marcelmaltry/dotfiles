@@ -19,7 +19,7 @@ alias glga='git lga'
 # Source OS specific functions
 if [[ "$OSTYPE" == "darwin"* ]];
 then
-    source ${ZSH_PATH}/macos/aliases.sh
+    source ${ZSH_PATH}/macos/aliases.zsh
 else
-    source ${ZSH_PATH}/arch/aliases.sh
+    source ${ZSH_PATH}/arch/aliases.zsh
 fi
