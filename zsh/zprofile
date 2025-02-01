@@ -7,15 +7,15 @@ then
     then
         # Add Homebrew to PATH on Apple Silicon
         export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/opt/homebrew/sbin:$PATH"
 
         # Set paths to find libraries
         export CPATH=/opt/homebrew/include
         export LIBRARY_PATH=/opt/homebrew/lib
+    else
+        # Set up PATH to find Homebrew installed binaries.
+        export PATH="$PATH:/usr/local/sbin"
     fi
-
-    # Set up PATH to find Homebrew installed binaries.
-    # https://docs.brew.sh/Formula-Cookbook#variables-for-directory-locations
-    export PATH="$PATH:/usr/local/sbin"
 
     # Set up PostgreSQL binaries
     export PATH="$PATH:$(brew --prefix postgresql@16)/bin"
